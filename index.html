@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://image.ibb.co/nqbdHJ/titlelogo.png" rel="icon">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link href="https://raw.githack.com/Arza-3d/ar3.js/master/stylesheets/ar3.min.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <title>math for artists</title>
 
+    </head>
+    <body
+        data-repo-r3="https://github.com/Arza-3d/UE4-blueprint-communication"
+        data-headers-r3="> div > h2| > div > h3| div > section > h4"
+    >
+        <script src="https://raw.githack.com/Arza-3d/ar3.js/master/ar3header.js"></script>
+        <header>
+            <h1>math  for artists</h1>
+            <h4>live training summary</h4>
+            <table>
+                <tr>
+                    <td>game engine</td>
+                    <td>Unreal Engine 4.21</td>
+                </tr>
+                <tr>
+                    <td>project template</td>
+                    <td>TPS</td>
+                </tr>
+                <tr>
+                    <td>project repo</td>
+                    <td><a href="#">....</a></td>
+                </tr>
+            </table>
+
+            <p>Summary of Math for Artists discussion from Epic Games
+                <a href="https://www.youtube.com/watch?v=KrghZBIIsXc&t=2609s">youtube</a>.
+            </p>
+        </header>
+        <main class="aside-nav-target-r3">
+
+            <div data-title-r3="vector">
+                <h2>vector fundamental (David Hill slide)</h2>
+
+                <h3>direction</h3>
+                <section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">definition</th>
+                                <th rowspan="2">math</th>
+                                <th colspan="2">case example</th>
+                            </tr>
+                            <tr>
+                                <th>math</th>
+                                <th>C++ example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>defining vector \(\overrightarrow{a}\)</td>
+                                <td>
+                                    $$ \overrightarrow{a} =  (\color{red}{a_x}, \color{green}{a_y}, \color{blue}{a_z}) $$
+                                </td>
+                                <td>
+                                    $$ \overrightarrow{a} =  (\color{red}{0}, \color{green}{1}, \color{blue}{2}) $$
+                                </td>
+                                <td>
+                                    <code>FVector A = FVector(0.f, 1.f, 2.f);</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>vector length of \(\overrightarrow{a}\)</td>
+                                <td>
+                                    $$ ||a|| = \sqrt{\color{red}{a_x}^2 + \color{green}{a_y}^2 + \color{blue}{a_z}^2} $$
+                                </td>
+                                <td>
+                                    $$ ||a|| = \sqrt{\color{red}{0}^2 + \color{green}{1}^2 + \color{blue}{2}^2} $$
+                                    $$ ||a|| = \sqrt 5 $$
+                                </td>
+                                <td>
+                                    <code>
+                                        float ALength;<br><br>
+                                        ALength = A.Size(); <span class="comment-r3">//</span>
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>normal / direction of \(\overrightarrow{a}\)</td>
+                                <td>
+                                    $$ \overrightarrow{n_a} =  \frac{\overrightarrow{a}}{||a||} $$
+                                </td>
+                                <td>
+                                    $$ \overrightarrow{n_a} = \frac{(\color{red}{0} , \color{green}{1} , \color{blue}{2})}{\sqrt 5} $$
+                                    $$ \overrightarrow{n_a} = (\color{red}{0} , \color{green}{\frac{1}{\sqrt 5}} , \color{blue}{\frac{2}{\sqrt 5}}) $$
+                                </td>
+                                <td>
+                                    <code>
+                                        FVector ANormal;<br><br>
+                                        ANormal = A.GetUnsafeNormal();
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>normal vector <br>will always have<br>1 vector length</td>
+                                <td>
+                                    $$ ||n_a|| =  \sqrt{\color{red}{n_x}^2 + \color{green}{n_y}^2 + \color{blue}{n_z}^2} = 1 $$
+                                </td>
+                                <td>
+                                    $$ ||n_a|| = \sqrt{\color{red}{0}^2 + (\color{green}{\frac{1}{\sqrt 5}})^2 + (\color{blue}{\frac{2}{\sqrt 5}})^2 } $$
+                                    $$ ||n_a|| = \sqrt{ \color{red}{0} + \color{green}{\frac{1}{5}} + \color{blue}{\frac{4}{5}} } $$
+                                    $$ ||n_a|| = 1 $$
+                                </td>
+                                <td>
+                                    <code>
+                                        ANormal.Size();
+                                        <span class="comment-r3">// 1.f</span>
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>so vector contains normal and length</td>
+                                <td>
+                                    $$ \overrightarrow{a} =  (\color{red}{n_x}, \color{green}{n_y}, \color{blue}{n_z}) . ||a||$$
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <details>
+                        <summary>example:</summary>
+                        <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=951"></iframe>
+                    </details>
+                </section>
+
+                <h3>direction and magnitude</h3>
+                <section>
+                    $$ \overrightarrow{a} =  (\color{red}{a_x}, \color{green}{a_y}, \color{blue}{a_z}) $$
+
+                    $$ ||a|| = \sqrt{\color{red}{a_x}^2 + \color{green}{a_y}^2 + \color{blue}{a_z}^2} $$
+
+                    $$ \overrightarrow{n_a} =  \frac{\overrightarrow{a}}{||a||} $$
+
+                    $$ \overrightarrow{n_a} =  (\frac{\color{red}{a_x}}{||a||}, \frac{\color{green}{a_y}}{||a||}, \frac{\color{blue}{a_z}}{||a||}) = (\color{red}{n_x}, \color{green}{n_y}, \color{blue}{n_z})$$
+
+                    $$ ||n_a|| = 1 $$
+
+                    $$ \overrightarrow{a} =  (\color{red}{n_x}, \color{green}{n_y}, \color{blue}{n_z})  ||a||$$
+
+                    <code>
+                        FVector a, n_a;
+                        <br>a = FVector(0.0f, 1.0f, 2.0f);
+                        <br>n_a = a / a.VectorLength();
+                    </code>
+
+
+                </section>
+
+                <h3>addition</h3>
+                <section>
+                    $$ \overrightarrow{a} = (\color{red}{a_x}, \color{green}{a_y}, \color{blue}{a_z})$$
+
+                    $$ \overrightarrow{b} = (\color{red}{b_x}, \color{green}{b_y}, \color{blue}{b_z})$$
+
+                    $$ \overrightarrow{c} = \overrightarrow{a} + \overrightarrow{b} $$
+
+                    $$ \overrightarrow{c} = \overrightarrow{a} + \overrightarrow{b} = (\color{red}{a_x} + \color{red}{b_x}, \color{green}{a_y} + \color{green}{b_y}, \color{blue}{a_z} + \color{blue}{b_z})$$
+
+                    <details>
+                        <summary>example:</summary>
+                        <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=1017"></iframe>
+                    </details>
+                </section>
+
+                <h3>substraction</h3>
+                <section>
+
+                    $$ \overrightarrow{a} = (\color{red}{a_x}, \color{green}{a_y}, \color{blue}{a_z})$$
+
+                    $$ \overrightarrow{b} = (\color{red}{b_x}, \color{green}{b_y}, \color{blue}{b_z})$$
+
+                    $$ \overrightarrow{c} = \overrightarrow{a} - \overrightarrow{b} $$
+
+                    $$ \overrightarrow{c} = \overrightarrow{a} - \overrightarrow{b} = (\color{red}{a_x} - \color{red}{b_x}, \color{green}{a_y} - \color{green}{b_y}, \color{blue}{a_z} - \color{blue}{b_z})$$
+
+                    <details>
+                        <summary>example:</summary>
+                        <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=1084"></iframe>
+                    </details>
+                </section>
+                <h2>reflection vector</h2>
+
+                <h3>Wyeth method</h3>
+                <section>
+                    <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=1100"></iframe>
+                </section>
+
+                <h3>dot product trick</h3>
+                <section>
+                    $$ ||\overrightarrow{n}|| = 1$$
+
+                    $$ \overrightarrow{n} = (\color{red}{n_x}, \color{green}{n_y}, \color{blue}{n_z}) $$
+
+                    $$ \overrightarrow{v} . \overrightarrow{n} = \color{red}{v_x n_x} + \color{green}{v_y n_y} + \color{blue}{v_z n_z}$$
+
+                    $$ \textrm{length of this side} = \overrightarrow{v} . \overrightarrow{n}$$
+
+                    $$ (\overrightarrow{v} . \overrightarrow{n}) \overrightarrow{n} $$
+
+                    tegak lurus di arah normal:
+
+                    $$ \overrightarrow{v} - (\overrightarrow{v} . \overrightarrow{n}) \overrightarrow{n} $$
+
+                    <br/>
+
+                    reflection vector:
+
+                    $$ \overrightarrow{v} - 2 (\overrightarrow{v} . \overrightarrow{n}) \overrightarrow{n} $$
+
+
+
+                    <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=1619"></iframe>
+                </section>
+
+                <h3>reflection example</h3>
+                <section>
+                    <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=1766"></iframe>
+
+
+                </section>
+
+                <h2>transform</h2>
+                <h3>transform</h3>
+                <section>
+                    <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=2034"></iframe>
+                </section>
+
+                <h3>visualization</h3>
+                <section>
+                    <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=2169"></iframe>
+                </section>
+
+                <h3>visualization</h3>
+                <section>
+                    <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=2398"></iframe>
+                </section>
+            </div>
+
+        </main>
+        <script src="https://raw.githack.com/Arza-3d/ar3.js/master/ar3.min.js"></script>
+    </body>
+</html>
