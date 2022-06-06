@@ -1,0 +1,3 @@
+functin googleQuery(argum) {
+    // body...
+}
