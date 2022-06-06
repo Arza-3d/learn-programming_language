@@ -24,97 +24,12 @@
     </header>
     <main class="aside-nav-target-r3">
 
-        <div data-title-r3="">
+        <div data-title-r3="string">
             <h2>vector fundamental (David Hill slide)</h2>
 
             <h3>direction</h3>
             <section>
-                <table>
-                    <thead>
-                        <tr>
-                            <th rowspan="2">definition</th>
-                            <th rowspan="2">math</th>
-                            <th colspan="2">case example</th>
-                        </tr>
-                        <tr>
-                            <th>math</th>
-                            <th>C++ example</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>defining vector \(\overrightarrow{a}\)</td>
-                            <td>
-                                $$ \overrightarrow{a} =  (\color{red}{a_x}, \color{green}{a_y}, \color{blue}{a_z}) $$
-                            </td>
-                            <td>
-                                $$ \overrightarrow{a} =  (\color{red}{0}, \color{green}{1}, \color{blue}{2}) $$
-                            </td>
-                            <td>
-                                <code>FVector A = FVector(0.f, 1.f, 2.f);</code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>vector length of \(\overrightarrow{a}\)</td>
-                            <td>
-                                $$ ||a|| = \sqrt{\color{red}{a_x}^2 + \color{green}{a_y}^2 + \color{blue}{a_z}^2} $$
-                            </td>
-                            <td>
-                                $$ ||a|| = \sqrt{\color{red}{0}^2 + \color{green}{1}^2 + \color{blue}{2}^2} $$
-                                $$ ||a|| = \sqrt 5 $$
-                            </td>
-                            <td>
-                                <code>
-                                    float ALength;<br><br>
-                                    ALength = A.Size(); <span class="comment-r3">//</span>
-                                </code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>normal / direction of \(\overrightarrow{a}\)</td>
-                            <td>
-                                $$ \overrightarrow{n_a} =  \frac{\overrightarrow{a}}{||a||} $$
-                            </td>
-                            <td>
-                                $$ \overrightarrow{n_a} = \frac{(\color{red}{0} , \color{green}{1} , \color{blue}{2})}{\sqrt 5} $$
-                                $$ \overrightarrow{n_a} = (\color{red}{0} , \color{green}{\frac{1}{\sqrt 5}} , \color{blue}{\frac{2}{\sqrt 5}}) $$
-                            </td>
-                            <td>
-                                <code>
-                                    FVector ANormal;<br><br>
-                                    ANormal = A.GetUnsafeNormal();
-                                </code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>normal vector <br>will always have<br>1 vector length</td>
-                            <td>
-                                $$ ||n_a|| =  \sqrt{\color{red}{n_x}^2 + \color{green}{n_y}^2 + \color{blue}{n_z}^2} = 1 $$
-                            </td>
-                            <td>
-                                $$ ||n_a|| = \sqrt{\color{red}{0}^2 + (\color{green}{\frac{1}{\sqrt 5}})^2 + (\color{blue}{\frac{2}{\sqrt 5}})^2 } $$
-                                $$ ||n_a|| = \sqrt{ \color{red}{0} + \color{green}{\frac{1}{5}} + \color{blue}{\frac{4}{5}} } $$
-                                $$ ||n_a|| = 1 $$
-                            </td>
-                            <td>
-                                <code>
-                                    ANormal.Size();
-                                    <span class="comment-r3">// 1.f</span>
-                                </code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>so vector contains normal and length</td>
-                            <td>
-                                $$ \overrightarrow{a} =  (\color{red}{n_x}, \color{green}{n_y}, \color{blue}{n_z}) . ||a||$$
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                
                 <details>
                     <summary>example:</summary>
                     <iframe src="https://www.youtube.com/embed/KrghZBIIsXc?start=951"></iframe>
@@ -123,6 +38,7 @@
 
             <h3>direction and magnitude</h3>
             <section>
+                <a href="https://www.google.com/search?q=how+to+concat+string+in+#lang">https://www.google.com/search?q=how+to+concat+string+in+#lang</a>
             </section>
 
             <h3>addition</h3>
