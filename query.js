@@ -1,3 +1,4 @@
-functin googleQuery(argum) {
-    // body...
+function googleQuery(myQuestion) {
+    let new
+    
 }
