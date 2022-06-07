@@ -1,4 +1,4 @@
 function googleQuery(myQuestion) {
-    let new
-    
+    let newQuestion = "https://www.google.com/search?q=" + myQuestion.replace(" ", "+");
+    return newQuestion;
 }
